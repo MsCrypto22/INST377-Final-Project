@@ -1,7 +1,3 @@
-Based on your project proposal, here's a README template tailored to your Horoscope Project, **Astro Insights**:
-
----
-
 # Astro Insights 🌌  
 **Personalized, Reliable, and Visually Appealing Horoscope Application**
 
