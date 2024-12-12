@@ -52,14 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
       ['Cancer', 22], ['Leo', 22], ['Virgo', 22],
       ['Libra', 22], ['Scorpio', 21], ['Sagittarius', 21]
     ];
-    return day > signs[month - 1][1] ? signs[month][0] : signs[month - 1][0];
+    return day > signs[month - 1][1] ? signs[month][0] : signs[month - 1][0]; // This doesn't work for 1999-12-31
   }
   
   // Function to fetch horoscope
   async function fetchHoroscope(sign, day = "TODAY") {
     const endpoint = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${sign}&day=${day}`;
-    
-    try {
+  
+    const response = await fetch(endpoint) 
+
+    return response.json();
+   /* .then((resp) => resp.json())
+    .then((data) => {
+
+      return resp.json();
+
+    })
+  */
+   /*try {
       const response = await fetch(endpoint);
       
       // Log raw response for debugging
@@ -76,12 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       const data = await response.json();
-      console.log("Horoscope Data:", data.horoscope_data);
+      console.log("Horoscope Data:", data);
       return data;
     } catch (error) {
       console.error("Failed to fetch horoscope:", error);
       return null;
     }
+    */
   }
   
   // Function to fetch NASA APOD
@@ -97,8 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("zodiacSign").innerText = `Your Zodiac Sign: ${sign}`;
   
     // Handle missing or invalid horoscope data
-    if (horoscopeData && horoscopeData.description) {
-      document.getElementById("horoscope").innerText = horoscopeData.description;
+    if (horoscopeData && horoscopeData.data) {
+      document.getElementById("horoscope").innerText = horoscopeData.data.horoscope_data;
     } else {
       document.getElementById("horoscope").innerText = "Horoscope data is unavailable.";
     }
