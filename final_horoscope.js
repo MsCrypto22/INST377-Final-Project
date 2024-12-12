@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       const data = await response.json();
-      console.log("Horoscope Data:", data);
+      console.log("Horoscope Data:", data.horoscope_data);
       return data;
     } catch (error) {
       console.error("Failed to fetch horoscope:", error);
