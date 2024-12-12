@@ -1,0 +1,48 @@
+body {
+    background-color: purple;
+}
+
+
+#main-nav {
+    background-color: lightcyan; 
+    padding: 10px 0;
+    text-align: center;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+#main-nav ul li {
+    margin: 0 15px;
+}
+
+#main-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease; 
+    padding: 5px 10px;
+    border-radius: 5px; 
+}
+
+.main h1{
+    text-align: center;
+    color: white;
+}
+
+.main p{
+    text-align: center;
+    color: white;
+}
+
+canvas {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white; 
+    border-radius: 10px;
+}
