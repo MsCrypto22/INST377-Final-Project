@@ -46,14 +46,29 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Function to determine Zodiac sign based on day and month
   function getZodiacSign(day, month) {
-    const signs = [
-      ['Capricorn', 19], ['Aquarius', 18], ['Pisces', 20],
-      ['Aries', 19], ['Taurus', 20], ['Gemini', 20],
-      ['Cancer', 22], ['Leo', 22], ['Virgo', 22],
-      ['Libra', 22], ['Scorpio', 21], ['Sagittarius', 21]
-    ];
-    return day > signs[month - 1][1] ? signs[month][0] : signs[month - 1][0]; // This doesn't work for 1999-12-31
+  const signs = [
+    ['Capricorn', 19], 
+    ['Aquarius', 18],  
+    ['Pisces', 20],    
+    ['Aries', 19],     
+    ['Taurus', 20],    
+    ['Gemini', 20],    
+    ['Cancer', 22],    
+    ['Leo', 22],       
+    ['Virgo', 22],     
+    ['Libra', 22],     
+    ['Scorpio', 21],   
+    ['Sagittarius', 21] 
+  ];
+
+  // Handle December after the 21st correctly
+  if (month === 12 && day > signs[month - 1][1]) {
+    return signs[0][0]; // Capricorn for December 22 onward
   }
+
+  // Default case for other months
+  return day > signs[month - 1][1] ? signs[month][0] : signs[month - 1][0];
+}
   
   // Function to fetch horoscope
   async function fetchHoroscope(sign, day = "TODAY") {
@@ -97,11 +112,32 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Function to fetch NASA APOD
   async function fetchNasaAPOD(date) {
-    const apiKey = 'wKeq374VeUXqgnK3BfoCivpRywZVdLy2VmjDcpUI'; 
-    const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`);
-    if (!response.ok) throw new Error('Failed to fetch NASA APOD data');
-    return await response.json();
+  const apiKey = 'wKeq374VeUXqgnK3BfoCivpRywZVdLy2VmjDcpUI'; 
+  const earliestDate = '1995-06-16'; // NASA's first APOD image
+  const endpointBase = 'https://api.nasa.gov/planetary/apod';
+
+  // Ensure the date is not earlier than the earliest allowed date
+  if (new Date(date) < new Date(earliestDate)) {
+    alert(`The NASA APOD API only supports dates from ${earliestDate}. Using ${earliestDate} instead.`);
+    date = earliestDate;
   }
+
+  const endpoint = `${endpointBase}?api_key=${apiKey}&date=${date}`;
+
+  try {
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
+    }
+    const data = await response.json();
+    console.log('NASA APOD Data:', data);
+    return data;
+  } catch (error) {
+    console.error('Error fetching NASA APOD data:', error);
+    alert('Failed to fetch NASA APOD data. Please try again later.');
+    throw error;
+  }
+}
   
   // Function to update UI with fetched data
   function updateUI(sign, horoscopeData, apodData) {
