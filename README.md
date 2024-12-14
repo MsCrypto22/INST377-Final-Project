@@ -43,7 +43,8 @@ This project aims to serve the following groups:
 
 ### Back-End  
 - **API:**  
-  - **Aztro API**: Provides reliable horoscope data.  
+  - **Horoscope API**: Provides reliable horoscope data; --> [Horoscope API](https://horoscope-app-api.vercel.app/) 
+  - **NASA APOD API**: Provides daily Astronomy Pictures taken by NASA telescopes with the option to query based on a specified date. --> [NASA APOD API Github Repository](https://github.com/nasa/apod-api) 
   - Custom API: Handles user preferences and historical horoscope data.  
 - **Database:**  
   - **Supabase**: Stores user preferences, past horoscopes, and other metadata.  
