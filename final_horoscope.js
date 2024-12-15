@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
       weekContent.setAttribute('id','weeklyResults');
 
       let zodiacElem = document.createElement('h2');
-      zodiacElem.textContent = "(ﾉ◕ヮ◕)ﾉ*・ﾟ✧ OOO! A " + zodiacWeek + "! Hmm...let's see here:";
+      zodiacElem.textContent = "(ﾉ◕ヮ◕)ﾉ*・ﾟ✧ OOO! " + zodiacWeek + "! Hmm...let's see here:";
 
       let weekForecast = document.createElement('p');
       weekForecast.setAttribute('id', 'weekPara');
