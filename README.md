@@ -65,14 +65,14 @@ This project aims to serve the following groups:
 ## Setup and Installation  
 ### Prerequisites  
 - Node.js installed on your system.  
-- A Supabase account and NASA APOD API key.  
+- A Supabase account with Supabase URL, Supabase API Key, and NASA APOD API key.  
 
 ### Steps  
 1. Clone this repository:  
    ```bash
    git clone https://github.com/yourusername/astro-insights.git
    cd astro-insights
-   ```  
+
 2. Install dependencies:  
    ```bash
    npm install

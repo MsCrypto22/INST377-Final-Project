@@ -1,0 +1,25 @@
+{
+  "name": "inst377-final-project",
+  "version": "1.0.0",
+  "description": "Integrating Astro Insights App with Supabase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -e '*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MsCrypto22/INST377-Final-Project.git"
+  },
+  "author": "Mia Manning",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MsCrypto22/INST377-Final-Project/issues"
+  },
+  "homepage": "https://github.com/MsCrypto22/INST377-Final-Project#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.7",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
