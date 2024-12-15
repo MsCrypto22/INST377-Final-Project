@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       console.log('Valid input, proceeding with API calls...');
-  
       // Format date for NASA API (YYYY-MM-DD)
       const formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
   
@@ -166,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Add functions for weekly and monthly horoscope
+  // Added few lines of code to empty div containers for weekly and monthly horoscope
   async function getWeeklyHoroscope() {
     const userDay = document.getElementById('day_week').value;
     const userMonth = document.getElementById('month_week').value;

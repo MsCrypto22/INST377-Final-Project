@@ -138,6 +138,7 @@ function getZodiacConstellations() {
       });
 
 }
+// Added showConstellations() function to populate image slider 
 
 function showConstellations() {
   getZodiacConstellations();

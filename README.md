@@ -91,7 +91,7 @@ This project aims to serve the following groups:
 - **Push Notifications:** Daily horoscope updates via email or SMS.  
 - **Premium Features:** In-depth compatibility reports and detailed astrological charts.  
 - **Social Sharing:** Share horoscope insights on social media.
-- **Compatibility Insights:** Compatibility reports dynamically generated for selected zodiac signs.   
+- **Compatibility Insights:** Compatibility reports dynamically generated for selected zodiac sign.   
 
 ---
 
