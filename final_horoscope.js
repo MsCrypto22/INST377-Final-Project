@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, ready for user input.');
     
@@ -176,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let weekContainer = document.getElementById('weeklyResultsContainer');
       let weekContent = document.createElement('div');
+      weekContainer.innerHTML = ""; // Empty container for successive calls without reloading page
       //Updating attribute already styled with CSS to make results box appear "dynamically"
       weekContent.setAttribute('id','weeklyResults');
 
@@ -216,8 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
       let monthContainer = document.getElementById('monthlyResultsContainer');
+      monthContainer.innerHTML = ""; // Empty out 
       let monthContent = document.createElement('div');
-      //Updating attribute already styled with CSS to make results box appear "dynamically"
+      // Updating attribute already styled with CSS to make results box appear "dynamically"
       monthContent.setAttribute('id','monthlyResults');
       let monthCalInfo = document.createElement('div');
       monthCalInfo.setAttribute('id', 'cal_days');

@@ -4,6 +4,7 @@
         <title>Horoscope Project</title>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script defer src="final_homepage.js"></script>
+        <script defer src="https://rawgit.com/ruyadorno/simple-slider/master/dist/simpleslider.min.js"></script>
     </head>
     <body>
         <nav id = "main-nav">
@@ -24,5 +25,13 @@
         <p>Join the 42% and rely on us!</p>
 
         </div>
+
+        <h2 id="constellations">Check out the Stars Behind the Zodiac</h2>
+        <p>These 12 constellations reference a blend of astronomy, astrology, and mythology! Click the button below to reveal.</p>
+        <div class="buttonAlign">
+            <button class="submitButton" role="button" type="button" onclick="showConstellations()">Into the Stars!</button> <br>
+        </div>
+        <div id="mySlider" data-simple-slider></div>
+
     </body>
 </html>

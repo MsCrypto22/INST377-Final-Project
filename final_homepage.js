@@ -103,3 +103,42 @@ document.addEventListener('DOMContentLoaded', () => {
   
     console.log('Astrology chart initialized successfully.');
   });
+
+function getZodiacConstellations() {
+    const zodiacImages = [
+      "https://www.go-astronomy.com/images/constellations/Aries.jpg",
+      "https://www.go-astronomy.com/images/constellations/Aquarius.jpg",
+      "https://www.go-astronomy.com/images/constellations/Libra.jpg",
+      "https://www.go-astronomy.com/images/constellations/Gemini.jpg",
+      "https://www.go-astronomy.com/images/constellations/Capricornus.jpg",
+      "https://www.go-astronomy.com/images/constellations/Taurus.jpg",
+      "https://www.go-astronomy.com/images/constellations/Virgo.jpg",
+      "https://www.go-astronomy.com/images/constellations/Leo.jpg",
+      "https://www.go-astronomy.com/images/constellations/Pisces.jpg",
+      "https://www.go-astronomy.com/images/constellations/Cancer.jpg",
+      "https://www.go-astronomy.com/images/constellations/Scorpius.jpg",
+      "https://www.go-astronomy.com/images/constellations/Sagittarius.jpg"
+    ];
+    const constellationCarousel = document.getElementById('mySlider');
+    console.log(zodiacImages);
+
+    for (const zImg of zodiacImages) {
+      let imgElem = document.createElement('img');
+        imgElem.src = zImg;
+        imgElem.width = 600;
+        imgElem.height = 600;
+        console.log(imgElem.src);
+        constellationCarousel.appendChild(imgElem);
+    }
+
+   simpleslider.getSlider({
+        container: document.getElementById('mySlider'),
+        transitionTime:1,
+        delay:5.0
+      });
+
+}
+
+function showConstellations() {
+  getZodiacConstellations();
+}

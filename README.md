@@ -1,8 +1,8 @@
-# Cosmic Insights 🌌  
+# Astro Insights 🌌  
 **Personalized, Reliable, and Visually Appealing Horoscope Application**
 
 ## Overview  
-Cosmic Insights is a modern horoscope application designed to provide astrology enthusiasts with reliable, up-to-date daily horoscopes and compatibility insights. By leveraging the Aztro API and integrating user preferences through Supabase, this app delivers a tailored and intuitive experience, free from clutter and distractions.
+Astro Insights is a modern horoscope application designed to provide astrology enthusiasts with reliable, up-to-date daily horoscopes and compatibility insights. By leveraging the Horoscope API and integrating user preferences through Supabase, this app delivers a tailored and intuitive experience, free from clutter and distractions.
 
 ---
 
@@ -12,7 +12,7 @@ Astrology enthusiasts often face challenges when seeking daily guidance based on
 - Lack of personalization.  
 - Incomplete or inconsistent astrological data.  
 
-Cosmic Insights addresses these issues with a clean, user-friendly interface and holistic astrological insights tailored to each user.
+Astro Insights addresses these issues with a clean, user-friendly interface and holistic astrological insights tailored to each user.
 
 ---
 
