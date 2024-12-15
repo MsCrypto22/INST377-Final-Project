@@ -12,8 +12,9 @@
                 <li><a href = "final_horoscope.html">Horoscopes</a></li>
             </ul>
         </nav>
-        <h1>Find out your daily horoscope!</h1>
-        <p>Please input your birthday below!</p>
+        <h1>Daily Horoscope with A Birthday Twist</h1>
+        <p> After inputting your data, you'll get a horoscope for today <em>and</em> a NASA
+            Astronomy Picture captured on the date of your birth. Please input your birthday below:</p>
         <form id="birthdayForm">
             <label for="day">Day:</label>
             <input type="number" id="day" min="1" max="31" required>
@@ -24,7 +25,7 @@
             <label for="year">Year:</label>
             <input type="number" id="year" min="1900" max="2024" required>
         
-            <button type="button" id="submitBtn">Submit</button>
+            <button type="button" id="submitBtn">Reveal!</button>
         </form>
         
         <div id="results" style="display: none; margin-top: 20px;">
@@ -39,5 +40,43 @@
               <p id="apodDescription"></p>
             </div>
         </div>
+        <hr>
+
+        <!--Room to add weekly and monthly horoscope sections-->
+        <h1>Weekly Horoscope</h1>
+        <div> 
+            <form name="weekForm">
+                <div>
+                    <label for="day_w">Day:</label>
+                    <input type="number" id="day_week" min="1" max="31" required>
+                    
+                    <label for="month_w">Month:</label>
+                    <input type="number" id="month_week" min="1" max="12" required>
+        
+                    <button class="submitButton" role="button" type="button" onclick="getWeeklyHoroscope()">Off We Go!</button> <br>
+        
+                </div>
+            </form>
+        </div>
+
+        <div id="weeklyResultsContainer"></div>
+        <hr>
+
+        <h1>Monthly Horoscope</h1>
+        <div> 
+            <form name="monthForm">
+                <div>
+                    <label for="day_m">Day:</label>
+                    <input type="number" id="day_month" min="1" max="31" required>
+                    
+                    <label for="month_m">Month:</label>
+                    <input type="number" id="month_month" min="1" max="12" required>
+        
+                    <button class="submitButton" role="button" type="button" onclick="getMonthlyHoroscope()">Yipee!</button> <br>
+        
+                </div>
+            </form>
+        </div>
+        <div id="monthlyResultsContainer"></div>
     </body>
 </html>

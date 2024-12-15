@@ -1,8 +1,8 @@
-# Astro Insights 🌌  
+# Cosmic Insights 🌌  
 **Personalized, Reliable, and Visually Appealing Horoscope Application**
 
 ## Overview  
-Astro Insights is a modern horoscope application designed to provide astrology enthusiasts with reliable, up-to-date daily horoscopes and compatibility insights. By leveraging the Aztro API and integrating user preferences through Supabase, this app delivers a tailored and intuitive experience, free from clutter and distractions.
+Cosmic Insights is a modern horoscope application designed to provide astrology enthusiasts with reliable, up-to-date daily horoscopes and compatibility insights. By leveraging the Aztro API and integrating user preferences through Supabase, this app delivers a tailored and intuitive experience, free from clutter and distractions.
 
 ---
 
@@ -12,7 +12,7 @@ Astrology enthusiasts often face challenges when seeking daily guidance based on
 - Lack of personalization.  
 - Incomplete or inconsistent astrological data.  
 
-Astro Insights addresses these issues with a clean, user-friendly interface and holistic astrological insights tailored to each user.
+Cosmic Insights addresses these issues with a clean, user-friendly interface and holistic astrological insights tailored to each user.
 
 ---
 
@@ -43,8 +43,8 @@ This project aims to serve the following groups:
 
 ### Back-End  
 - **API:**  
-  - **Horoscope API**: Provides reliable horoscope data; --> [Horoscope API](https://horoscope-app-api.vercel.app/) 
-  - **NASA APOD API**: Provides daily Astronomy Pictures taken by NASA telescopes with the option to query based on a specified date. --> [NASA APOD API Github Repository](https://github.com/nasa/apod-api) 
+  - **Horoscope API**: Provides reliable horoscope data --> [Horoscope API](https://horoscope-app-api.vercel.app/) 
+  - **NASA APOD API**: Provides daily Astronomy Pictures taken by NASA telescopes with the option to query based on a specified date --> [NASA APOD API Github Repository](https://github.com/nasa/apod-api) 
   - Custom API: Handles user preferences and historical horoscope data.  
 - **Database:**  
   - **Supabase**: Stores user preferences, past horoscopes, and other metadata.  
@@ -53,12 +53,11 @@ This project aims to serve the following groups:
 
 ## How It Works  
 1. **Data Fetching:**  
-   - The app fetches daily horoscope data from the Aztro API based on the user’s zodiac sign.  
+   - The app fetches horoscope data from the Horoscope API based on the user’s zodiac sign.
+   - Additionally, our app fetches a corresponding Astronomy Picture of the Day from a NASA API for any horoscope requests that input a specific date (e.g. birthdays)  
 2. **Personalization:**  
-   - User preferences (e.g., zodiac sign) are stored in Supabase for easy retrieval.  
-3. **Compatibility Insights:**  
-   - Compatibility reports are dynamically generated for selected zodiac signs.  
-4. **Front-End Display:**  
+   - User preferences (e.g., zodiac sign) are stored in Supabase for easy retrieval.   
+3. **Front-End Display:**  
    - A sleek and intuitive interface showcases the daily horoscope and additional insights.  
 
 ---
@@ -66,7 +65,7 @@ This project aims to serve the following groups:
 ## Setup and Installation  
 ### Prerequisites  
 - Node.js installed on your system.  
-- A Supabase account and Aztro API key.  
+- A Supabase account and NASA APOD API key.  
 
 ### Steps  
 1. Clone this repository:  
@@ -79,25 +78,26 @@ This project aims to serve the following groups:
    npm install
    ```  
 3. Configure API keys:  
-   - Add your Aztro API key to the environment file.  
+   - Add your NASA APOD API key to the environment file.  
    - Set up your Supabase database and connect it to the project.  
 
 4. Start the development server:  
    ```bash
    npm start
    ```  
-
 ---
 
 ## Future Enhancements  
 - **Push Notifications:** Daily horoscope updates via email or SMS.  
 - **Premium Features:** In-depth compatibility reports and detailed astrological charts.  
-- **Social Sharing:** Share horoscope insights on social media.  
+- **Social Sharing:** Share horoscope insights on social media.
+- **Compatibility Insights:** Compatibility reports dynamically generated for selected zodiac signs.   
 
 ---
 
 ## Acknowledgments  
-- [Aztro API](https://aztro.sameerkumar.website/) for reliable horoscope data.  
+- [Horoscope API](https://horoscope-app-api.vercel.app/) for reliable horoscope data. 
+- [NASA Astronomy Picture of the Day](https://github.com/nasa/apod-api) for consistently updated astronomy images to complement horoscopes.
 - [Supabase](https://supabase.com/) for database management.  
 
 ---

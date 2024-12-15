@@ -163,3 +163,115 @@ document.addEventListener('DOMContentLoaded', () => {
   
     document.getElementById("results").style.display = "block";
   }
+
+  // Add functions for weekly and monthly horoscope
+  async function getWeeklyHoroscope() {
+    const userDay = document.getElementById('day_week').value;
+    const userMonth = document.getElementById('month_week').value;
+    const zodiacWeek = getZodiacSign(userDay, userMonth);
+    await fetch(`https://horoscope-app-api.vercel.app/api/v1/get-horoscope/weekly?sign=${zodiacWeek}`)
+    .then((resp) => resp.json())
+    .then((data) => {
+
+
+      let weekContainer = document.getElementById('weeklyResultsContainer');
+      let weekContent = document.createElement('div');
+      //Updating attribute already styled with CSS to make results box appear "dynamically"
+      weekContent.setAttribute('id','weeklyResults');
+
+      let zodiacElem = document.createElement('h2');
+      zodiacElem.textContent = "(ﾉ◕ヮ◕)ﾉ*・ﾟ✧ OOO! A " + zodiacWeek + "! Hmm...let's see here:";
+
+      let weekForecast = document.createElement('p');
+      weekForecast.setAttribute('id', 'weekPara');
+      weekForecast.textContent = "" + data.data.horoscope_data ;
+
+      let weekOfHeader = document.createElement('h3');
+      weekOfHeader.setAttribute('id', 'weekH3');
+      weekOfHeader.textContent = "Inclusion Dates:";
+
+      let weekOfText = document.createElement('p');
+      weekOfText.setAttribute('id', 'weekOf');
+      weekOfText.textContent = "" + data.data.week;
+  
+      //Append to inner content element
+      weekContent.appendChild(zodiacElem);
+      weekContent.appendChild(weekForecast);
+      weekContent.appendChild(weekOfHeader);
+      weekContent.appendChild(weekOfText);
+
+      //Lastly, append to container
+      weekContainer.appendChild(weekContent);
+    })
+
+  }
+
+  async function getMonthlyHoroscope() {
+    const userDayM = document.getElementById('day_month').value;
+    const userMonthM = document.getElementById('month_month').value;
+    const zodiacMonth = getZodiacSign(userDayM, userMonthM);
+    await fetch(`https://horoscope-app-api.vercel.app/api/v1/get-horoscope/monthly?sign=${zodiacMonth}`)
+    .then((resp) => resp.json())
+    .then((data) => {
+
+
+      let monthContainer = document.getElementById('monthlyResultsContainer');
+      let monthContent = document.createElement('div');
+      //Updating attribute already styled with CSS to make results box appear "dynamically"
+      monthContent.setAttribute('id','monthlyResults');
+      let monthCalInfo = document.createElement('div');
+      monthCalInfo.setAttribute('id', 'cal_days');
+
+      let zodiacElemM = document.createElement('h2');
+      zodiacElemM.textContent = "How's it going " + zodiacMonth + "? " + data.data.month + " will be interesting for you: ";
+
+      let monthForecast = document.createElement('p');
+      monthForecast.setAttribute('id', 'monthPara');
+      monthForecast.textContent = "" + data.data.horoscope_data ;
+
+      let challengeElem = document.createElement('img');
+      challengeElem.setAttribute('id', 'challenge_icon');
+      challengeElem.src = 'https://cdn-icons-png.flaticon.com/512/11516/11516315.png';
+      challengeElem.width = 100;
+      challengeElem.height = 100;
+     
+      let challengeH3 = document.createElement('h3');
+      challengeH3.setAttribute('id', 'monthChallengeH3');
+      challengeH3.textContent = "A few challenging days: ";
+
+      let challengeDays = document.createElement('p');
+      challengeDays.setAttribute('id', 'challenge_text');
+      challengeDays.textContent = "" + data.data.challenging_days;
+
+      let noteableElem = document.createElement('img');
+      noteableElem.setAttribute('id', 'noteable_icon');
+      noteableElem.src = 'https://cdn-icons-png.flaticon.com/512/10710/10710704.png';
+      noteableElem.width = 100;
+      noteableElem.height = 100;
+     
+      let noteableH3 = document.createElement('h3');
+      noteableH3.setAttribute('id', 'monthNoteableH3');
+      noteableH3.textContent = "But a few standout days as well: ";
+
+      let noteableDays = document.createElement('p');
+      noteableDays.setAttribute('id', 'noteable_text');
+      noteableDays.textContent = "" + data.data.standout_days;
+  
+      //Append to inner content elements
+      monthContent.appendChild(zodiacElemM);
+      monthContent.appendChild(monthForecast);
+
+      monthCalInfo.appendChild(challengeElem);
+      monthCalInfo.appendChild(challengeH3);
+      monthCalInfo.appendChild(challengeDays);
+
+      monthCalInfo.appendChild(noteableElem);
+      monthCalInfo.appendChild(noteableH3);
+      monthCalInfo.appendChild(noteableDays);
+
+      //Lastly, append to container
+      monthContent.appendChild(monthCalInfo);
+      monthContainer.appendChild(monthContent);
+
+  })
+}

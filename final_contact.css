@@ -1,10 +1,10 @@
 body {
-    background-color: purple;
+    background-color: rgb(254, 200, 154);
     padding-bottom: 50px;
 }
 
 #main-nav {
-    background-color: lightcyan;
+    background-color: white;
     padding: 10px 0;
     text-align: center;
     animation: slideDown 1s ease-in-out;
@@ -46,13 +46,18 @@ p {
 
 h1 {
     color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 #bar {
     position: absolute; /* Or 'fixed' if you want it to stay on screen while scrolling */
     bottom: 0;
     width: 100%;
-    background-color: #d3d3d3; /* Light grey color */
+    background-color: white; /* Light grey color */
     text-align: center;
     padding: 10px 0; /* Add some padding for better spacing */
+}
+
+#bar_text {
+    color: black;
 }
