@@ -12,6 +12,10 @@ const SUPA_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const supabase = supabaseClient.createClient(SUPA_URL, SUPA_API_KEY);
 
+app.get('/', (req, res) => {
+    res.sendFile('public/final_homepage.html', {root: __dirname});
+})
+
 // API endpoints
 app.get('/zodiac', async (req, res) => {
     console.log('Attempting to retrieve zodiac events');

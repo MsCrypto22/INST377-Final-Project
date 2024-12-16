@@ -20,18 +20,22 @@
             Let the stars guide your decisions, inspire your day, and unlock the secrets of the universe-one horoscope at a time!</b></p>
 
         <h1>Have Questions? Reach Out!</h1>
-        <form name = "contactForm" onsubmit=" return validate()">
-        <label for = "name">Name: </label>
-        <input type = "text" id = "name" required>
-        <br>
-        <label for = "date">Date: </label>
-        <input type = "date" id = "date" required>
-        <br>
-        <label for = "message">Concern: </label>
-        <textarea id = "message" name="message" rows="4" cols="50" required></textarea>
-        <br>
-        <input type = "submit"> 
+        <form name ="contactForm" onsubmit="sendMessage(); return false;">
 
+            <label for ="name">Name: </label>
+            <input type ="text" id ="name" required>
+            <br>
+
+            <label for ="date">Date: </label>
+            <input type ="date" id ="date" required>
+            <br>
+
+            <label for ="message">Concern: </label>
+            <textarea id ="message" name="message" rows="4" cols="50" required></textarea>
+            <br>
+
+            <button type="submit" class="submitBtn" name="sender" value="sender">Send Message</button> 
+        </form>
         <footer id = "bar">
             <p id="bar_text">Created by Mia Manning, Micah Seghetti, Breanna Bernardino, & Nilla Karunakaran</p>
         </footer>
