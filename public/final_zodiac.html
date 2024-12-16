@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="final_zodiac.css">
+        <title>Historic Zodiac Events</title>
+        <script defer src="final_zodiac.js"></script>
+    </head>
+    <body>
+        <nav id = "main-nav">
+            <ul>
+                <li><a href = "final_homepage.html">Home</a></li>
+                <li><a href = "final_contact.html">About</a></li>
+                <li><a href = "final_horoscope.html">Horoscopes</a></li>
+                <li><a href = "final_zodiac.html">Zodiac Events</a></li>
+            </ul>
+        </nav>
+
+        <h1>Historic Modern Event in Your Zodiac</h1>
+        <div> 
+            <form name="zodiac_retrieve_form">
+                <div>
+                    <label for="user_zodiac">Zodiac Sign: </label>
+                    <input type="text" id="zodiac_sign" required placeholder="(e.g. Capricorn, Aries)">
+                    
+                    <button class="submitButton" role="button" type="button" onclick="getZodiac(); return false;">Into the Past!</button> <br>
+        
+                </div>
+            </form>
+        </div>
+        <div id="zodiacResultsContainer"></div>
+
+        <footer id = "bar">
+            <p id="bar_text">Utilized OpenAI ChatGPT feature to generate historic event descriptions for each zodiac sign.</p>
+            <p id="bar_text"><img src="https://www.freelogovectors.net/wp-content/uploads/2023/01/openai-logo-freelogovectors.net_.png" alt="OpenAI Symbol" width="100" height="30"/></p>
+        </footer>
+    </body>
+</html>
