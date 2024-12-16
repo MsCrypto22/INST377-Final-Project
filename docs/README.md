@@ -4,6 +4,8 @@
 ## Overview  
 Astro Insights is a modern horoscope application designed to provide astrology enthusiasts with reliable, up-to-date daily horoscopes and compatibility insights. By leveraging the Horoscope API and integrating user preferences through Supabase, this app delivers a tailored and intuitive experience, free from clutter and distractions.
 
+Deployed on Vercel Here: [Astro Insights Vercel App](https://inst377finalprojverceldeploy.vercel.app/final_contact.html)
+
 ---
 
 ## Problem Statement  
